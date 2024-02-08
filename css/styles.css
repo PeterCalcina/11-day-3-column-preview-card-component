@@ -1,0 +1,178 @@
+/* -----------------
+Tabla de contenidos:
+--------------------
+1. Fuente ................ 11
+2. Variables ............. 17
+3. Estilos generales ..... 32
+-------------------- 
+*/
+
+
+/* ----- Fuente ----- */
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&display=swap');
+
+/* ----- Variables ----- */
+:root {
+  /* Colores primarios */
+  --bright-orange: hsl(31, 77%, 52%);
+  --dark-cyan: hsl(184, 100%, 22%);
+  --very-dark-cyan: hsl(179, 100%, 13%);
+
+  /* Colores neutrales */
+  --transparent-white: hsla(0, 0%, 100%, 0.75);
+  --very-light-gray: hsl(0, 0%, 95%);
+
+  /* Tipografia */
+  --font-size: 15px;
+  --font-family: 'Lexend Deca', sans-serif;
+  --font-family-display: 'Big Shoulders Display', cursive;
+  --font-weight-regular: 400;
+  --font-weight-bold: 700;
+
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* ----------------------------- */
+/* ----- Estilos generales ----- */
+/* ----------------------------- */
+
+body {
+  display: grid;
+  place-items: center;
+
+  height: 100vh;
+
+  font-size: var(--font-size);
+  font-family: var(--font-family);
+  color: var(--very-dark-cyan);
+  background-color: var(--very-light-gray);
+}
+
+.cars {
+  display: flex;
+  width: 740px;
+  height: auto;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.cars .car__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  width: calc(100% / 3);
+  height: 350px;
+  padding: 30px 40px 40px 40px;
+}
+
+.cars .cars__sedan {
+  background-color: var(--bright-orange);
+}
+
+.cars .cars__suv {
+  background-color: var(--dark-cyan);
+}
+
+.cars .cars__luxury {
+  background-color: var(--very-dark-cyan);
+}
+
+
+.cars .car__content .cars__img {
+  width: 50px;
+  height: 50px;
+}
+
+.cars .car__content .cars__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.cars .car__content .cars__description {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.cars .car__content .cars__description h2 {
+  margin: 0;
+  font-size: 2rem;
+  font-family: var(--font-family-display);
+  font-weight: var(--font-weight-bold);
+  color: var(--very-light-gray);
+}
+
+.cars .car__content .cars__description p {
+  font-size: 12px;
+  line-height: 1.7;
+  color: var(--transparent-white);
+  opacity: 0.75;
+}
+
+.cars .car__content .btn-more {
+  margin-top: auto;
+  padding: 10px 20px;
+  font-size: 12px;
+  font-weight: var(--font-weight-bold);
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cars .car__content .btn-more:hover {
+  border: 1px solid var(--very-light-gray);
+  color: var(--very-light-gray);
+  background-color: transparent;
+}
+
+.cars .cars__sedan .btn-more {
+  border: 1px solid var(--bright-orange);
+  color: var(--bright-orange);
+}
+
+.cars .cars__suv .btn-more {
+  border: 1px solid var(--dark-cyan);
+  color: var(--dark-cyan);
+}
+
+.cars .cars__luxury .btn-more {
+  border: 1px solid var(--very-dark-cyan);
+  color: var(--very-dark-cyan);
+}
+
+@media (width <= 475px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+    height: auto;
+  }
+
+  .cars {
+    flex-direction: column;
+    width: 90%;
+  }
+
+  .cars .car__content {
+    width: 100%;
+    height: auto;
+  }
+
+  .cars .car__content .cars__description h2 {
+    font-size: 2.5rem;
+  }
+
+  .cars .car__content .cars__description p {
+    width: 100%;
+    font-size: 14px;
+  }
+}
